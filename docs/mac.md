@@ -1,13 +1,13 @@
 # MacOS
 
-## Install Docker Desktop
+## 1. Install Docker Desktop
 
 You must install Docker Desktop for Mac and ensure it is running before proceeding. [Follow the instructions here to install Docker Desktop](https://docs.docker.com/desktop/setup/install/mac-install/) 
 
 > [!IMPORTANT]
 > Docker Desktop doesn't support GPU acceleration on macOS: Gazebo performance may be less than optimal.
 
-## Clone this repository to your system
+## 2. Clone this repository to your system
 
 Clone this repository to your home directory using the command below:
 
@@ -30,6 +30,6 @@ cd ros2-docker/
 chmod +x ros2-docker-mac.zsh
 ``` -->
 
-## Launching the ROS 2 Environment
+## 3. Launching the ROS 2 Environment
 
 Refer to [the steps here](./containers.md).

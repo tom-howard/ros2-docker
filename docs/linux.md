@@ -1,6 +1,6 @@
 # Linux
 
-## Installing Docker (and Docker Compose)
+## 1. Installing Docker (and Docker Compose)
 
 ### Ubuntu/Debian
 Make sure to install docker using [this guide](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04).
@@ -26,7 +26,7 @@ You can use the command below to install it on Fedora 41 and newer. Make sure to
 sudo dnf install docker-cli containerd docker-compose
 ```
 
-## Clone this repository to your system
+## 2. Clone this repository to your system
 
 Clone this repository to your home directory using the command below:
 
@@ -52,6 +52,6 @@ chmod +x ros2-docker.sh
 <!-- > [!WARNING]
 > If you are running Linux, you need to allow have Xwayland running with the following xhost command added to your shell configuration `xhost +local:root -->
 
-## Launching the ROS 2 Environment
+## 3. Launching the ROS 2 Environment
 
 Refer to [the steps here](./containers.md).
