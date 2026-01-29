@@ -79,11 +79,11 @@ Or
 
 ## Stopping the Container
 
-Once you are done working, exit the ROS 2 environment wth `exit`.
+Once you are done working, exit the ROS 2 environment with `exit`.
 
 To stop the container, run the following:
 
-``bash
+```bash
 ./ros2-docker.sh stop
 ```
 
