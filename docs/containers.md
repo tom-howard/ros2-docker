@@ -4,12 +4,18 @@ The ROS 2 environment is accessed via the `ros2-docker.sh` or `ros2-docker.zsh` 
 
 Find out what shell you are using by running the command `echo $SHELL`. 
 
-If the output of this is `/bin/bash` then use `ros2-docker.sh` in the instructions that follow. If the output is `/bin/zsh` then use `ros2-docker.zsh`. (If you're on a Mac, you'll more than likely need to use `ros2-docker.zsh`.
+If the output of this is `/bin/bash` then use `ros2-docker.sh` in the instructions that follow. If the output is `/bin/zsh` then use `ros2-docker.zsh`. (If you're on a Mac, you'll more than likely need to use `ros2-docker.zsh`).
 
 To begin, navigate into the `ros2-docker` repository:
 
 ```bash
 cd ~/ros2-docker
+```
+
+Then, it's always worth quickly checking for any updates:
+
+```bash
+git pull
 ```
 
 ## Initial Step: Set your system
@@ -30,7 +36,10 @@ Where `X` should be either `linux` or `mac` as appropriate.
 
 ## Starting the Container
 
-Mac users will need to ensure that the Docker Desktop app is running first.
+> [!IMPORTANT]
+> **Mac users** will need to ensure that the Docker Desktop app is running first.
+
+To build the ROS 2 Docker environment, run the following (it may take some time to build the first time around).
 
 ```bash
 ./ros2-docker.sh start
@@ -47,7 +56,7 @@ Or
 <!-- > [!IMPORTANT]
 > **Linux users:** If you are on wayland, make sure you have xwayland support and the `xorg.xhost` package installed. -->
 
-The following command will launch the shell where you can start using all the `ros2` tools you need.
+The following command will launch the *"shell"*, where you can start using all the `ros2` tools you need.
 
 ```bash
 ./ros2-docker.sh shell

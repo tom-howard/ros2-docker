@@ -19,7 +19,7 @@ Here select `/ros2-docker`.
 
 Now allow VS Code some time as it installs itself in the container.
 
-When you see the new window appear, click open folder and choose `/home/student`
+When you see the new window appear, click `open folder` and choose `/home/student`
 
 Now you can just work in VS Code.
 
