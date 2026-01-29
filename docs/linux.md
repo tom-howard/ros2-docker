@@ -8,7 +8,7 @@ Make sure to install docker using [this guide](https://www.digitalocean.com/comm
 > [!NOTE]
 > Does not work with Docker Desktop. If you have installed it through `snap` or any other method apart from using `apt` then uninstall it, and install it using the guide above.
 
-**Important**: Make sure you complete Step 2 of the guide "Step 2 — Executing the Docker Command Without Sudo (Optional)" as you need to be able to use the `docker` command without root permissions.
+**Important**: Make sure you complete Step 2 of the guide *"Executing the Docker Command Without Sudo"* as you need to be able to use the `docker` command without root permissions.
 
 ### Arch Linux (Artix/Endeavour/Manjaro)
 
@@ -26,7 +26,7 @@ You can use the command below to install it on Fedora 41 and newer. Make sure to
 sudo dnf install docker-cli containerd docker-compose
 ```
 
-### Clone this repository to your system
+## Clone this repository to your system
 
 Clone this repository to your home directory using the command below:
 
