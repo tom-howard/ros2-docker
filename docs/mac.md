@@ -1,28 +1,35 @@
 # MacOS
 
-## 1. Installing Docker Desktop
+## Install Docker Desktop
 
-You must install Docker Desktop for Mac and ensure it is running before proceeding. [Install link for Docker Desktop](https://docs.docker.com/desktop/setup/install/mac-install/) 
+You must install Docker Desktop for Mac and ensure it is running before proceeding. [Follow the instructions here to install Docker Desktop](https://docs.docker.com/desktop/setup/install/mac-install/) 
 
 > [!IMPORTANT]
-> Expected performance is 15-20fps in gazebo or even less. This is because Docker Desktop doesn't support GPU acceleration on macOS.
+> Docker Desktop doesn't support GPU acceleration on macOS: Gazebo performance may be less than optimal.
 
-## 2. Setting up your workspace
+## Clone this repository to your system
 
-### 2.1 Clone this repository
+Clone this repository to your home directory using the command below:
 
-Clone this repository using the command below in a location your prefer. You will need to remember this location.
+```zsh
+git clone https://github.com/tom-howard/ros2-docker.git ~/ros2-docker --depth 1
+```
+<!-- 
+### Set up the launcher script
 
-``` bash
-git clone https://github.com/hegde-atri/ros2-docker --depth 1
+> [!NOTE]
+> The assumption is that you are using zsh as your shell (the default on a Mac).
+
+To run the container, you'll need to make sure the launcher script has execute permissions:
+
+```zsh
+cd ros2-docker/
 ```
 
-### 2.2 Setup your shell
+```zsh
+chmod +x ros2-docker-mac.zsh
+``` -->
 
-The `<DOCKER-COMMAND>` is  `docker compose up -d --build`
+## Launching the ROS 2 Environment
 
-Refer to [shell.md](./shell.md) to setup your shell.
-
-## 3. Start using the containers
-
-Refer to [containers.md](./containers.md) to use the containers.
+Refer to [the steps here](./containers.md).
