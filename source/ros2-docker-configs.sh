@@ -2,6 +2,8 @@
 
 source ${HOME}/.diamond/bash-aliases
 
+sudo chown -R student:student ${HOME}/ros2_ws
+
 source /opt/ros/${ROS_DISTRO}/setup.bash
 if [ -f "${HOME}/ros2_ws/install/setup.bash" ]; then
     source ${HOME}/ros2_ws/install/setup.bash
