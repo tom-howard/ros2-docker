@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
     xorg-dev \
     net-tools \
     iputils-ping \
-    iproute2 \
+    iproute2 && \
     apt-get autoremove -y && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
