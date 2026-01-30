@@ -12,4 +12,4 @@
 
 ## Acknowledgments
 
-Many thanks to [Atri Hegde](https://github.com/hegde-atri), for coming up with this solution. This version is an adaptation of [Atri's original approach](https://github.com/hegde-atri/ros2-docker), but adapted for ROS 2 Jazzy.    
+Many thanks to [Atri Hegde](https://github.com/hegde-atri), for coming up with this solution. This version is an adaptation of [Atri's original approach](https://github.com/hegde-atri/ros2-docker), adapted for ROS 2 Jazzy.    
