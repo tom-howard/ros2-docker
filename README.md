@@ -9,3 +9,7 @@
 
 - If you cannot open Docker desktop on MacOS and its being marked as malware - follow this issue https://github.com/docker/for-mac/issues/7520
 - The password for the student user is `password`.
+
+## Acknowledgments
+
+Many thanks to [Atri Hegde](https://github.com/hegde-atri), for coming up with this solution. This version is an adaptation of [Atri's original approach](https://github.com/hegde-atri/ros2-docker), but adapted for ROS 2 Jazzy.    
