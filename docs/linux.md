@@ -52,6 +52,14 @@ chmod +x ros2-docker.sh
 <!-- > [!WARNING]
 > If you are running Linux, you need to allow have Xwayland running with the following xhost command added to your shell configuration `xhost +local:root -->
 
-## 3. Launching the ROS 2 Environment
+## 3. Specify your system
+
+Run the following one-time command to point the launcher scripts ([described here](./containers.md)) to the correct Docker files for your system (Linux). The assumption here is that you are using `bash` for your shell. For `zsh`, change the extension accordingly.
+
+```bash
+./ros2-docker.sh system linux
+```
+
+## 4. Launch the ROS 2 Environment
 
 Refer to [the steps here](./containers.md).

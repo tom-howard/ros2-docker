@@ -18,22 +18,6 @@ Then, it's always worth quickly checking for any updates:
 git pull
 ```
 
-## Initial Step: Set your system
-
-Specify your system:
-
-```bash
-./ros2-docker.sh system X
-```
-
-Or
-
-```zsh
-./ros2-docker.zsh system X
-```
-
-Where `X` should be either `linux` or `mac` as appropriate.
-
 ## Starting the Container
 
 > [!IMPORTANT]
@@ -92,3 +76,7 @@ Or
 ```zsh
 ./ros2-docker.zsh stop
 ```
+
+## Proceed to The ROS 2 Course
+
+Having launched your ROS 2 Environment successfully, you're now ready to take on **[The ROS 2 Course](https://tom-howard.github.io/ros2/course/)**...

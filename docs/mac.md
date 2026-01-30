@@ -30,6 +30,14 @@ cd ros2-docker/
 chmod +x ros2-docker-mac.zsh
 ``` -->
 
-## 3. Launching the ROS 2 Environment
+## 3. Specify your system
+
+Run the following one-time command to point the launcher scripts ([described here](./containers.md)) to the correct Docker files for your system (Mac).
+
+```zsh
+./ros2-docker.zsh system mac
+```
+
+## 4. Launch the ROS 2 Environment
 
 Refer to [the steps here](./containers.md).
