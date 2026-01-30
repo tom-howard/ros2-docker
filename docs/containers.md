@@ -4,7 +4,7 @@ The ROS 2 environment is accessed via the `ros2-docker.sh` or `ros2-docker.zsh` 
 
 Find out what shell you are using by running the command `echo $SHELL`. 
 
-If the output of this is `/bin/bash` then use `ros2-docker.sh` in the instructions that follow. If the output is `/bin/zsh` then use `ros2-docker.zsh`. (If you're on a Mac, you'll more than likely need to use `ros2-docker.zsh`).
+If the output of this is `/bin/bash` then use `ros2-docker.sh` in the instructions that follow. If the output is `/bin/zsh` then use `ros2-docker.zsh`. (If you're on a Mac, you'll more than likely need to use `ros2-docker.zsh`.)
 
 To begin, navigate into the `ros2-docker` repository:
 
@@ -23,7 +23,7 @@ git pull
 > [!IMPORTANT]
 > **Mac users** will need to ensure that the Docker Desktop app is running first.
 
-To build the ROS 2 Docker environment, run the following (it may take some time to build the first time around).
+To build the ROS 2 Docker environment, run the following (it may take some time to build the first time around, or after a significant update).
 
 ```bash
 ./ros2-docker.sh start
@@ -40,7 +40,7 @@ Or
 <!-- > [!IMPORTANT]
 > **Linux users:** If you are on wayland, make sure you have xwayland support and the `xorg.xhost` package installed. -->
 
-The following command will launch the *"shell"*, where you can start using all the `ros2` tools you need.
+The following command will launch the *"shell"*, where you can access all the `ros2` tools you'll need.
 
 ```bash
 ./ros2-docker.sh shell
@@ -55,11 +55,13 @@ Or
 [For information on how to open and edit files in the ROS 2 Container from VS Code, see here](./vscode.md).
 
 > [!IMPORTANT]
-> **MacOS users:** Any GUI window opened will have to be viewed using the noVNC viewer at
-> <http://localhost:8080/vnc.html>
+> **MacOS users:** Any GUI window opened will have to be viewed using the noVNC viewer at <http://localhost:8080/vnc.html>
 >
-> For a better VNC experience, in the settings toolbox, set the scaling
-> mode to local.
+> For a better VNC experience, in the settings toolbox, set the scaling mode to local.
+
+## Proceed to The ROS 2 Course
+
+Having launched your ROS 2 Environment successfully, you're now ready to take on **[The ROS 2 Course](https://tom-howard.github.io/ros2/course/)**...
 
 ## Stopping the Container
 
@@ -76,7 +78,3 @@ Or
 ```zsh
 ./ros2-docker.zsh stop
 ```
-
-## Proceed to The ROS 2 Course
-
-Having launched your ROS 2 Environment successfully, you're now ready to take on **[The ROS 2 Course](https://tom-howard.github.io/ros2/course/)**...
