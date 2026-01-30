@@ -1,6 +1,8 @@
 # A Docker Container for ROS 2 Jazzy
 
-## Platforms
+## Installation and Setup
+
+For installation and setup instructions, click on the link below as appropriate for your system: 
 
 - [Linux](./docs/linux.md)
 - [MacOS](./docs/mac.md)
