@@ -54,7 +54,13 @@ chmod +x ros2-docker.sh
 
 ## 3. Specify your system
 
-Run the following one-time command to point the launcher scripts ([described here](./containers.md)) to the correct Docker files for your system (Linux). The assumption here is that you are using `bash` for your shell. For `zsh`, change the extension accordingly.
+Navigate into the `ros2-docker` repository:
+
+```bash
+cd ~/ros2-docker
+```
+
+Then, run the following one-time command to point the launcher scripts ([described here](./containers.md)) to the correct Docker files for your system (Linux). The assumption here is that you are using `bash` for your shell. For `zsh`, change the extension accordingly.
 
 ```bash
 ./ros2-docker.sh system linux

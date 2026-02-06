@@ -32,8 +32,14 @@ chmod +x ros2-docker-mac.zsh
 
 ## 3. Specify your system
 
-Run the following one-time command to point the launcher scripts ([described here](./containers.md)) to the correct Docker files for your system (Mac).
+Navigate into the `ros2-docker` repository:
 
+```zsh
+cd ~/ros2-docker
+```
+
+Then, run the following one-time command to point the launcher scripts ([described here](./containers.md)) to the correct Docker files for your system (Mac).
+ 
 ```zsh
 ./ros2-docker.zsh system mac
 ```
