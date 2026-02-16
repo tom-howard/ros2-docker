@@ -1,6 +1,6 @@
-# Running the ROS 2 Docker Container(s)
+# Running the ROS 2 Docker Container(s) on MAC
 
-The ROS 2 environment is accessed via the `ros2-docker.sh` or `ros2-docker.zsh` scripts. 
+The ROS 2 environment is accessed via the `ros2-docker.zsh` script. 
 
 Find out what shell you are using by running the command `echo $SHELL`. 
 
@@ -12,9 +12,10 @@ To begin, navigate into the `ros2-docker` repository:
 cd ~/ros2-docker
 ```
 
-Then, it's always worth quickly checking for any updates:
+Then, **make sure you are on the right branch for MAC OS** and it's always worth quickly checking for any updates:
 
 ```bash
+git branch --show-current
 git pull
 ```
 
@@ -25,12 +26,6 @@ git pull
 
 To build the ROS 2 Docker environment, run the following (it may take some time to build the first time around, or after a significant update).
 
-```bash
-./ros2-docker.sh start
-```
-
-Or
-
 ```zsh
 ./ros2-docker.zsh start
 ```
@@ -38,15 +33,7 @@ Or
 ## Entering the ROS 2 "Shell"
 
 <!-- > [!IMPORTANT]
-> **Linux users:** If you are on wayland, make sure you have xwayland support and the `xorg.xhost` package installed. -->
-
 The following command will launch the *"shell"*, where you can access all the `ros2` tools you'll need.
-
-```bash
-./ros2-docker.sh shell
-```
-
-Or
 
 ```zsh
 ./ros2-docker.zsh shell
@@ -68,12 +55,6 @@ Having launched your ROS 2 Environment successfully, you're now ready to take on
 Once you are done working, exit the ROS 2 environment with `exit`.
 
 To stop the container, run the following:
-
-```bash
-./ros2-docker.sh stop
-```
-
-Or
 
 ```zsh
 ./ros2-docker.zsh stop
