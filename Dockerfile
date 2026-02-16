@@ -68,6 +68,9 @@ RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc \
  && echo "export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp" >> ~/.bashrc \
  && echo "export ROS_DOMAIN_ID=1" >> ~/.bashrc \
  && echo "export QT_X11_NO_MITSHM=1" >> ~/.bashrc \
- && echo "export LIBGL_ALWAYS_SOFTWARE=1" >> ~/.bashrc
+ && echo "export LIBGL_ALWAYS_SOFTWARE=1" >> ~/.bashrc \
+ && echo 'if [ -f "$HOME/ros2_ws/install/local_setup.bash" ]; then' >> ~/.bashrc \
+ && echo '  source "$HOME/ros2_ws/install/local_setup.bash"' >> ~/.bashrc \
+ && echo 'fi' >> ~/.bashrc
 	
 CMD ["bash", "-l"]
