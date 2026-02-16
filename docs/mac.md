@@ -12,7 +12,7 @@ You must install Docker Desktop for Mac and ensure it is running before proceedi
 Clone this repository to your home directory using the command below:
 
 ```zsh
-git clone https://github.com/tom-howard/ros2-docker.git ~/ros2-docker --depth 1
+git clone -b macos-jazzy-arm64 https://github.com/tom-howard/ros2-docker.git ~/ros2-docker --depth 1
 ```
 <!-- 
 ### Set up the launcher script
