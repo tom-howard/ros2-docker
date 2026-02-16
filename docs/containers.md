@@ -12,10 +12,18 @@ To begin, navigate into the `ros2-docker` repository:
 cd ~/ros2-docker
 ```
 
-Then, **make sure you are on the right branch for MAC OS** and it's always worth quickly checking for any updates:
+Then, **make sure you are on the right branch for MAC OS**:
 
 ```bash
 git branch --show-current
+```
+Expected output:
+```text
+macos-jazzy-arm64
+```
+
+and it's always worth quickly checking for any updates:
+```bash
 git pull
 ```
 
