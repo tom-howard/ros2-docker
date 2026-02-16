@@ -1,40 +1,65 @@
 #! /usr/bin/env zsh
 
-services:
-  ros_dev_env:
-    container_name: ros2-docker
-    build: ./
-    platform: linux/arm64
-    volumes:
-      - type: bind
-        source: ${ROS_PROJECT_PATH}
-        target: /home/student/ros2_ws/src/
-      - ros2_workspace:/home/student/ros2_ws
-    environment:
-      - DISPLAY=novnc:0.0
-      - QT_X11_NO_MITSHM=1
-      - LIBGL_ALWAYS_SOFTWARE=1
-    networks:
-      - x11
-    stdin_open: true
-    tty: true
-    depends_on:
-      - novnc
+COMMANDS=' start | stop | shell | system '
+P=$0
+COMMAND=$1
+B="$(basename ${P})"
+SCRIPT_NAME="$(cd "$(dirname "${P}")" && pwd)/$(basename "${P}")"
+PKG_PATH="$(dirname ${SCRIPT_NAME})"
+SYSTEM_FILE="${PKG_PATH}/.system_type"
+USAGE="$B ${COMMANDS}"
 
-  novnc:
-    image: theasp/novnc:latest
-    ports:
-      - "8080:8080"
-    environment:
-      - DISPLAY_WIDTH=1920
-      - DISPLAY_HEIGHT=1200
-    networks:
-      - x11
-    restart: on-failure
+export ROS_PROJECT_PATH="${HOME}/my_ros2_docker_workspace"
 
-networks:
-  x11:
+check_system_type() {
+    if [[ -f ${SYSTEM_FILE} ]]; then
+        SYSTEM_TYPE=$(cat ${SYSTEM_FILE})
+    else
+        echo "System type has not been set. Please set it using the 'system' command."
+        exit 0
+    fi
+}
 
-volumes:
-  ros2_workspace:
+start() {
+    # xhost +local:docker
+    mkdir -p ${ROS_PROJECT_PATH}
+    docker compose -f docker-compose.${SYSTEM_TYPE}.yml up -d --build
+}
 
+stop() {
+    docker compose -f docker-compose.${SYSTEM_TYPE}.yml down
+}
+
+shell() {
+    echo "Launching the ROS 2 environment, type 'exit' to leave once you're done."
+    docker exec -it ros2-docker /bin/bash
+}
+
+system() {
+    case $1 in
+      linux)
+        echo "linux" > ${SYSTEM_FILE}
+        ;;
+      mac)
+        echo "mac" > ${SYSTEM_FILE}
+        ;;
+      *)
+        echo "Please specify either 'linux' or 'mac'"
+        exit 0
+    esac
+}
+
+case $COMMAND in 
+  start|stop|shell)
+    check_system_type
+    ${COMMAND}
+    ;;
+  system)
+    ${COMMAND} $2
+    ;;
+  *) 
+    echo "Invalid Input..."
+    echo "$USAGE"
+    exit 0
+    ;;
+esac
