@@ -9,11 +9,15 @@ ENV EDITOR=nano
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates curl gnupg lsb-release \
     git build-essential cmake \
-    sudo nano vim tmux wget \
+    sudo nano vim tmux wget less tree eog \
     xorg-dev \
     mesa-utils libgl1 libglx-mesa0 libegl1 libgles2 \
     net-tools iputils-ping iproute2 \
-    python3-pip \
+ && rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3-pip python3-venv python3-scipy \
+    python3-pandas python3-pydantic \
  && rm -rf /var/lib/apt/lists/*
 
 # Add ROS 2 apt repo key + source list (Jazzy on Ubuntu 24.04)
@@ -50,6 +54,7 @@ RUN useradd -ms /bin/bash student \
 RUN curl -fsSL https://starship.rs/install.sh | sh -s -- --yes || true
 
 USER student
+ARG HOME_DIR=/home/student
 WORKDIR /home/student
 
 RUN touch ~/.hushlogin \
@@ -63,14 +68,12 @@ RUN if [ -f "/usr/local/bin/starship" ]; then \
     fi
 
 # Environment defaults
-RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc \
- && echo "export TURTLEBOT3_MODEL=waffle" >> ~/.bashrc \
- && echo "export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp" >> ~/.bashrc \
- && echo "export ROS_DOMAIN_ID=1" >> ~/.bashrc \
- && echo "export QT_X11_NO_MITSHM=1" >> ~/.bashrc \
- && echo "export LIBGL_ALWAYS_SOFTWARE=1" >> ~/.bashrc \
- && echo 'if [ -f "$HOME/ros2_ws/install/local_setup.bash" ]; then' >> ~/.bashrc \
- && echo '  source "$HOME/ros2_ws/install/local_setup.bash"' >> ~/.bashrc \
- && echo 'fi' >> ~/.bashrc
-	
+COPY ./source/ros2-docker-configs.sh ${HOME_DIR}/.diamond/ros2-docker-configs.sh
+COPY ./source/bash-aliases ${HOME_DIR}/.diamond/bash-aliases
+RUN echo "source ~/.diamond/ros2-docker-configs.sh" >> ${HOME_DIR}/.bashrc
+
+# Is this necessary? The student user should already own these files, but just in case...
+RUN sudo chown -R student:student ${HOME_DIR}/.diamond && \
+   sudo chown -R student:student ${HOME}/ros2_ws
+
 CMD ["bash", "-l"]

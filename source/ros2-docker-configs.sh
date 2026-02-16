@@ -2,8 +2,6 @@
 
 source ${HOME}/.diamond/bash-aliases
 
-sudo chown -R student:student ${HOME}/ros2_ws
-
 source /opt/ros/${ROS_DISTRO}/setup.bash
 if [ -f "${HOME}/ros2_ws/install/setup.bash" ]; then
     source ${HOME}/ros2_ws/install/setup.bash
@@ -13,6 +11,9 @@ export ROS_AUTOMATIC_DISCOVERY_RANGE=LOCALHOST
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 export TURTLEBOT3_MODEL=waffle
 export ROS_DOMAIN_ID=1
+
+export QT_X11_NO_MITSHM=1
+export LIBGL_ALWAYS_SOFTWARE=1
 
 # Colcon
 source /usr/share/colcon_cd/function/colcon_cd.sh
