@@ -1,4 +1,4 @@
-# A Docker Container for ROS 2 Jazzy
+# A Docker Container for ROS 2 Jazzy on MAC
 
 ## Installation and Setup
 
