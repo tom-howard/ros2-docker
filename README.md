@@ -4,7 +4,6 @@
 
 For installation and setup instructions, click on the link below as appropriate for your system: 
 
-- [Linux](./docs/linux.md)
 - [MacOS](./docs/mac.md)
 
 ## FAQ
