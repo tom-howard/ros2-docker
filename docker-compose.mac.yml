@@ -1,7 +1,8 @@
 services:
-  ros2_docker:
+  ros_dev_env:
     container_name: ros2-docker
     build: ./
+    platform: linux/arm64
     volumes:
       - type: bind
         source: ${ROS_PROJECT_PATH}
@@ -9,22 +10,29 @@ services:
       - ros2_workspace:/home/student/ros2_ws
     environment:
       - DISPLAY=novnc:0.0
+      - QT_X11_NO_MITSHM=1
+      - LIBGL_ALWAYS_SOFTWARE=1
     networks:
       - x11
     stdin_open: true
     tty: true
+    depends_on:
+      - novnc
+
   novnc:
     image: theasp/novnc:latest
+    ports:
+      - "8080:8080"
     environment:
       - DISPLAY_WIDTH=1920
       - DISPLAY_HEIGHT=1200
-    ports:
-      - "8080:8080"
     networks:
       - x11
     restart: on-failure
+
 networks:
   x11:
 
 volumes:
   ros2_workspace:
+
