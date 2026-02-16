@@ -32,7 +32,6 @@ To build the ROS 2 Docker environment, run the following (it may take some time 
 
 ## Entering the ROS 2 "Shell"
 
-<!-- > [!IMPORTANT]
 The following command will launch the *"shell"*, where you can access all the `ros2` tools you'll need.
 
 ```zsh
