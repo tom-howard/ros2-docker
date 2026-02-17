@@ -5,11 +5,10 @@
 For installation and setup instructions, click on the link below as appropriate for your system: 
 
 - [Linux](./docs/linux.md)
-- [MacOS](./docs/mac.md)
+- [MacOS](https://github.com/tom-howard/ros2-docker/blob/macos-jazzy-arm64/docs/mac.md) (this link will take you to the **NEW** `macos-jazzy-arm64` branch!)
 
 ## FAQ
 
-- If you cannot open Docker desktop on MacOS and its being marked as malware - follow this issue https://github.com/docker/for-mac/issues/7520
 - The password for the student user is `password`.
 
 ## Acknowledgments

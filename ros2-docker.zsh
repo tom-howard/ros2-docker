@@ -21,7 +21,7 @@ check_system_type() {
 }
 
 start() {
-    # xhost +local:docker
+    xhost +local:docker
     mkdir -p ${ROS_PROJECT_PATH}
     docker compose -f docker-compose.${SYSTEM_TYPE}.yml up -d --build
 }
