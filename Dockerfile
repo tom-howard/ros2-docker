@@ -48,8 +48,7 @@ RUN rosdep init || true
 # Create student user
 RUN useradd -ms /bin/bash student \
  && usermod -aG sudo student \
- && echo "student ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/student \
- && chmod 0440 /etc/sudoers.d/student
+ && echo '%sudo ALL=(ALL) NOPASSWD:ALL' | tee -a /etc/sudoers
 
 RUN curl -fsSL https://starship.rs/install.sh | sh -s -- --yes || true
 
