@@ -2,6 +2,10 @@ services:
   ros2_docker:
     container_name: ros2-docker
     build: ./
+    
+    # Use for Nvidia support: Nvidia Container Toolkit package required!
+    # runtime: nvidia
+
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - type: bind
@@ -10,6 +14,17 @@ services:
       - ros2_workspace:/home/student/ros2_ws
     environment:
       - DISPLAY=${DISPLAY}
+      
+      # -- Nvidia Commands -- #
+      # Required for Nvidia Container Toolkit
+      # - NVIDIA_VISIBLE_DEVICES=all
+      # Required for Gazebo Simulation
+      # - __GLX_VENDOR_LIBRARY_NAME=nvidia
+
+      # -- Extra Nvidia Commands if required -- #
+      # - NVIDIA_DRIVER_CAPABILITIES=all
+      # Could be needed for Nvidia Optimus Systems (Integrated+Dedicated Graphics)
+      # - __NV_PRIME_RENDER_OFFLOAD=1
     # network_mode: host
     # networks:
     #   - x11

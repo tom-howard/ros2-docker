@@ -22,6 +22,15 @@ check_system_type() {
 
 start() {
     xhost +local:docker
+    
+    if [[ ${SYSTEM_TYPE} == linux ]]; then
+      if [[ ${XDG_SESSION_TYPE} == "wayland" ]]; then
+        DISPLAY_NUM=$(echo $DISPLAY | sed 's/:\([0-9]*\)/\1/')
+        X_SOCKET="/tmp/.X11-unix/X${DISPLAY_NUM}"
+        setfacl -m u:1001:rwx $X_SOCKET
+      fi
+    fi    
+
     mkdir -p ${ROS_PROJECT_PATH}
     docker compose -f docker-compose.${SYSTEM_TYPE}.yml up -d --build
 }

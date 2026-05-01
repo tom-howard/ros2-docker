@@ -69,3 +69,20 @@ Then, run the following one-time command to point the launcher scripts ([describ
 ## 4. Launch the ROS 2 Environment
 
 Refer to [the steps here](./containers.md).
+
+## FAQ
+### I can't run the Gazebo Sim on Wayland:
+- Ensure you have xwayland and xhost installed
+- Verify xwayland is installed with: ```echo $DISPLAY```
+  - If there is no output, xwayland is not installed
+- Verify xhost is installed with: ```xhost```
+  - If there is no output, xhost is not installed
+
+### The Gazebo Simulation isn't using my Nvidia Graphics Card:
+1. Ensure you have installed Nvidia Drivers, preferably through your package manager if possible.
+2. Install Nvidia Container Toolkit via your package manager. If it isn't available on your package manager, install it directly from [Nvidia's Website](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
+3. Within [docker-compose.linux.yml](https://github.com/tom-howard/ros2-docker/blob/master/docker-compose.linux.yml), uncomment these lines:
+   - runtime: nvidia
+   - NVIDIA_VISIBLE_DEVICES=all
+   - __GLX_VENDOR_LIBRARY_NAME=nvidia
+4. If these steps don't resolve your issue, there are some more environment variables you can uncomment.
