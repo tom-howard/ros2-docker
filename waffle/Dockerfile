@@ -1,5 +1,5 @@
 ARG ROS_VERSION=jazzy
-FROM osrf/ros:${ROS_VERSION}-ros-base
+FROM osrf/ros:${ROS_VERSION}-desktop
 
 ARG ROS_VERSION
 ENV DEBIAN_FRONTEND=noninteractive
