@@ -74,7 +74,7 @@ WORKDIR ${HOME_DIR}/repos/tuos_ros
 RUN cp -r tuos_tb3_tools ${HOME_DIR}/ros2_ws/src/
 
 WORKDIR ${HOME_DIR}/ros2_ws
-RUN source /opt/ros/${ROS_VERSION}/setup.bash && colcon build
+RUN . /opt/ros/${ROS_VERSION}/setup.bash && colcon build
 
 COPY ./source/ros2-waffle-configs.sh ${HOME_DIR}/ros2-waffle-configs.sh
 COPY ./source/bash-aliases ${HOME_DIR}/bash-aliases
