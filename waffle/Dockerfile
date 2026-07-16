@@ -45,8 +45,8 @@ RUN echo "[INFO] Install Additional ROS tools" &&\
     ros-${ROS_VERSION}-turtlebot3-msgs \
     ros-${ROS_VERSION}-rmw-cyclonedds-cpp \
     ros-${ROS_VERSION}-rmw-zenoh-cpp \
-    ros-${ROS_VERSION}-librealsense2 \
-    ros-${ROS_VERSION}-realsense2 && \
+    ros-${ROS_VERSION}-librealsense2* \
+    ros-${ROS_VERSION}-realsense2-* && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
