@@ -1,7 +1,9 @@
 services:
   ros2_docker:
     container_name: ros2-docker
-    build: ./
+    build: 
+      context: .
+      dockerfile: waffle/Dockerfile
     stdin_open: true
     tty: true
     privileged: true
