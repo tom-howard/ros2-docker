@@ -43,8 +43,11 @@ system() {
       mac)
         echo "mac" > ${SYSTEM_FILE}
         ;;
+      waffle)
+        echo "waffle" > ${SYSTEM_FILE}
+        ;;
       *)
-        echo "Please specify either 'linux' or 'mac'"
+        echo "Please specify either 'linux', 'mac', or 'waffle' as the system type."
         exit 0
     esac
 }
